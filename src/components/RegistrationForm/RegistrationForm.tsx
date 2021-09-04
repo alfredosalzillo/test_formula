@@ -67,7 +67,7 @@ const RegistrationForm = () => {
             />
           </p>
           <Button
-            disabled={usernameValidation.isValidating}
+            disabled={usernameValidation.isValidating || !username}
             onClick={revalidateUsername}
           >
             Next
@@ -78,6 +78,9 @@ const RegistrationForm = () => {
           header="Choose an email"
         >
           <p>
+            {
+              emailValidation.isValidating && <Loader />
+            }
             <TextField
               id="email"
               label="Email"
@@ -100,7 +103,7 @@ const RegistrationForm = () => {
             </Button>
             <Button
               onClick={revalidateEmail}
-              disabled={emailValidation.isValidating}
+              disabled={emailValidation.isValidating || !email}
             >
               Next
             </Button>
@@ -111,6 +114,9 @@ const RegistrationForm = () => {
           header="Choose a password"
         >
           <p>
+            {
+              passwordValidation.isValidating && <Loader />
+            }
             <TextField
               id="password"
               label="Password"
@@ -134,7 +140,7 @@ const RegistrationForm = () => {
             </Button>
             <Button
               onClick={revalidatePassword}
-              disabled={passwordValidation.isValidating}
+              disabled={passwordValidation.isValidating || !password}
             >
               Next
             </Button>
