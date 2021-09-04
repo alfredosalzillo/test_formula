@@ -8,6 +8,10 @@ export type ButtonProps = React.PropsWithChildren<{
   disabled?: boolean,
 } & React.ButtonHTMLAttributes<HTMLButtonElement>>;
 
+/**
+ * A simple styled button.
+ * Available in two color: 'primary' and 'default'.
+ */
 const Button = (props: ButtonProps) => {
   const {
     color,

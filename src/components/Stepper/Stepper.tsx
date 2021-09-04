@@ -7,6 +7,33 @@ export type StepperProps = {
   children: ReactElement<StepProps, typeof Step>[]
 };
 
+/**
+ * A responsive stepper component to use with the `Step` components.
+ * It's an uncontrolled wrapper of Steps.
+ * Will be vertical in desktop and an horizontal slider in mobile.
+ *
+ * ```javascript jsx
+ * function App() {
+ *   const [step, setStep] = useState(1);
+ *   return (
+ *     <Stepper activeStep={step}>
+ *       <Step index={1} label="Step 1" >
+ *         <p>
+ *         Dolor sit amet.
+ *         </p>
+ *         <button onClick={() => setStep(c => c + 1)}>Next</button>
+ *       </Step>
+ *       <Step index={2} label="Step 2" >
+ *         <p>
+ *         Numquam sit delirium.
+ *         </p>
+ *         <button>Finish</button>
+ *       </Step>
+ *     </Stepper>
+ *   )
+ * }
+ * ```
+ */
 const Stepper = (props: StepperProps) => {
   const { children, activeStep } = props;
   return (
@@ -23,7 +50,7 @@ const Stepper = (props: StepperProps) => {
           // eslint-disable-next-line react/no-array-index-key
           <div className={classes.item} key={index}>
             {React.cloneElement(item, {
-              active: index + 1 === activeStep,
+              active: item.props.index === activeStep,
             })}
           </div>
         ))}

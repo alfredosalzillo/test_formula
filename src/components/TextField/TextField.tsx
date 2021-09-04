@@ -16,6 +16,10 @@ export type TextFieldProps = Omit<HTMLAttributes<HTMLLabelElement>, 'onChange'> 
   fullWidth?: boolean,
   InputProps?: InputProps,
 };
+/**
+ * A simple input field.
+ * Support label, helper text, error and disabled version.
+ */
 const TextField = (props: TextFieldProps) => {
   const {
     id,
