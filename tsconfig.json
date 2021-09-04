@@ -12,7 +12,23 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve"
+    "strictNullChecks": false,
+    "jsx": "preserve",
+    "baseUrl": ".",
+    "paths": {
+      "clsx": [
+        "./src/clsx.ts"
+      ],
+      "@validators/*": [
+        "./src/validators/*"
+      ],
+      "@components/*": [
+        "./src/components/*"
+      ],
+      "@hooks/*": [
+        "./src/hooks/*"
+      ]
+    }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]
