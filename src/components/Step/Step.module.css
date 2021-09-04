@@ -1,0 +1,50 @@
+.root {
+    width: 100%;
+    text-align: left;
+    color: inherit;
+    border: 1px solid var(--palette-commons-grey);
+    border-radius: 12px;
+    max-width: 100%;
+    overflow-x: hidden;
+    padding: 1rem;
+}
+
+.header {
+    max-width: 100%;
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    vertical-align: middle;
+}
+
+.avatar {
+    border: 1px solid var(--palette-commons-grey);
+    color: var(--palette-commons-black);
+    border-radius: 100%;
+    width: 30px;
+    height: 30px;
+    line-height: 32px;
+    display: inline-block;
+    text-align: center;
+    margin-right: 8px;
+}
+
+.content {
+    font-size: 1.25rem;
+    line-height: 1.5;
+}
+
+
+@media (min-width: 961px) {
+    .content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s ease-in-out;
+    }
+
+    .active .header {
+        margin-bottom: 1rem;
+    }
+    .active .content {
+        max-height: 200px;
+    }
+}
