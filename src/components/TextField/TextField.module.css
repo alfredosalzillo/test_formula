@@ -1,0 +1,44 @@
+.root {
+    font-size: 1.2rem;
+    display: inline-block;
+    width: fit-content;
+}
+
+.input {
+    background: var(--palette-commons-white);
+    border: 2px solid var(--palette-commons-grey);
+    border-radius: 4px;
+    font-size: 1.2rem;
+    padding: 1rem;
+}
+
+.input:hover, .input:focus {
+    border: 2px solid var(--palette-primary-main);
+    outline-color: var(--palette-primary-main);
+}
+
+.fullWidth, .fullWidth .input {
+    width: 100%;
+}
+
+.helperText {
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
+}
+
+.error {
+
+}
+
+.error .input, .error .input:hover, .error .input:active {
+    border-color: var(--palette-error-main);
+    outline-color: var(--palette-error-main);
+}
+.error .helperText {
+    color: var(--palette-error-main)
+}
+
+.disabled .input, .disabled .input:hover, .disabled .input:active {
+    border: 2px solid var(--palette-commons-grey);
+    color:  var(--palette-commons-grey);
+}
